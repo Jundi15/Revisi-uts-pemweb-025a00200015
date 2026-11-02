@@ -1,0 +1,506 @@
+:root {
+    --merah: #e11d2e;
+    --merah-gelap: #b81726;
+    --hitam: #111111;
+    --hitam-lembut: #1a1a1a;
+    --abu-gelap: #2a2a2a;
+    --abu: #707070;
+    --abu-muda: #e6e6e6;
+    --putih: #ffffff;
+    --latar: #f5f5f5;
+    --radius: 6px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    background: var(--latar);
+    color: var(--hitam);
+}
+
+a {
+    color: inherit;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+.container {
+    width: min(1120px, calc(100% - 32px));
+    margin: 0 auto;
+}
+
+.site-header {
+    background: var(--hitam);
+    border-bottom: 3px solid var(--merah);
+}
+
+.header-inner {
+    width: min(1120px, calc(100% - 32px));
+    min-height: 72px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+}
+
+.brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--putih);
+    text-decoration: none;
+    font-weight: 800;
+    letter-spacing: 0.6px;
+}
+
+.logo {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+}
+
+.nav-utama {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.nav-utama a {
+    padding: 8px 12px;
+    color: #d8d8d8;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.nav-utama a:hover,
+.nav-utama a.aktif {
+    color: var(--putih);
+    border-bottom-color: var(--merah);
+}
+
+.eyebrow {
+    margin-bottom: 8px;
+    color: var(--merah);
+    font-size: 0.82rem;
+    font-weight: 800;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+}
+
+.profil-page {
+    padding: 72px 0 56px;
+}
+
+.profil-intro {
+    max-width: 760px;
+    padding-bottom: 48px;
+    border-bottom: 1px solid #d6d6d6;
+}
+
+.profil-intro h1,
+.katalog-heading h1 {
+    max-width: 720px;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    line-height: 1.08;
+    letter-spacing: -1.5px;
+}
+
+.intro-text {
+    max-width: 670px;
+    margin-top: 18px;
+    color: #4d4d4d;
+    font-size: 1.05rem;
+}
+
+.tombol-utama {
+    display: inline-block;
+    margin-top: 26px;
+    padding: 11px 18px;
+    background: var(--merah);
+    color: var(--putih);
+    text-decoration: none;
+    border: 1px solid var(--merah);
+    border-radius: 4px;
+    font-weight: 700;
+    transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.tombol-kembali {
+     display: inline-block;
+    width: fit-content;
+    padding: 12px 22px;
+    background-color: #e7192d;
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 5px;
+    white-space: nowrap;
+    margin-left: auto;
+}
+
+.tombol-kembali:hover {
+    background: var(--merah-gelap);
+    border-color: var(--merah-gelap);
+}
+
+.tombol-utama:hover {
+    background: var(--merah-gelap);
+    border-color: var(--merah-gelap);
+}
+
+.profil-detail {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 32px;
+    padding-top: 36px;
+}
+
+.panel-profil {
+    background: var(--putih);
+    border: 1px solid #dddddd;
+    border-top: 3px solid var(--hitam);
+    border-radius: var(--radius);
+    padding: 26px;
+}
+
+.panel-profil h2 {
+    margin-bottom: 14px;
+    font-size: 1.25rem;
+}
+
+.panel-profil p {
+    color: #555555;
+}
+
+.biodata {
+    display: grid;
+    gap: 0;
+}
+
+.biodata > div {
+    display: grid;
+    grid-template-columns: 130px 1fr;
+    gap: 16px;
+    padding: 10px 0;
+    border-bottom: 1px solid #ececec;
+}
+
+.biodata > div:last-child {
+    border-bottom: 0;
+}
+
+.biodata dt {
+    color: var(--abu);
+}
+
+.biodata dd {
+    font-weight: 700;
+}
+
+.katalog-page {
+    padding: 48px 0 60px;
+}
+
+.katalog-heading {
+    display: grid;
+    grid-template-columns: 1.5fr 0.8fr;
+    gap: 36px;
+    align-items: end;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #d6d6d6;
+}
+
+.katalog-deskripsi {
+    color: #555555;
+}
+
+.ringkasan-katalog {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    margin: 28px 0;
+    border: 1px solid #d7d7d7;
+    background: var(--putih);
+}
+
+.ringkasan-item {
+    padding: 18px 20px;
+    border-right: 1px solid #e2e2e2;
+}
+
+.ringkasan-item:last-child {
+    border-right: 0;
+}
+
+.ringkasan-label {
+    display: block;
+    margin-bottom: 4px;
+    color: var(--abu);
+    font-size: 0.84rem;
+}
+
+.ringkasan-item strong {
+    font-size: 1.08rem;
+}
+
+.filter-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    margin-bottom: 22px;
+}
+
+.filter-label {
+    color: #555555;
+    font-weight: 700;
+}
+
+.filter-kondisi {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.filter-kondisi a {
+    padding: 7px 12px;
+    border: 1px solid #cfcfcf;
+    border-radius: 4px;
+    background: var(--putih);
+    color: var(--hitam);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.filter-kondisi a:hover {
+    border-color: var(--merah);
+    color: var(--merah);
+}
+
+.filter-kondisi a.aktif {
+    border-color: var(--hitam);
+    background: var(--hitam);
+    color: var(--putih);
+}
+
+.grid-produk {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.kartu-produk {
+    overflow: hidden;
+    background: var(--putih);
+    border: 1px solid #dddddd;
+    border-radius: var(--radius);
+    transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.kartu-produk:hover {
+    border-color: #aaaaaa;
+    transform: translateY(-2px);
+}
+
+.produk-meta {
+    min-height: 42px;
+    padding: 10px 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    border-bottom: 1px solid #eeeeee;
+}
+
+.badge {
+    display: inline-block;
+    padding: 3px 7px;
+    border-radius: 3px;
+    color: var(--putih);
+    font-size: 0.72rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+}
+
+.badge--aman {
+    background: #1f7a47;
+}
+
+.badge--menipis {
+    background: #b96b00;
+}
+
+.badge--habis {
+    background: var(--merah);
+}
+
+.kode-produk {
+    color: #777777;
+    font-family: Consolas, monospace;
+    font-size: 0.76rem;
+}
+
+.gambar-wrap {
+    height: 210px;
+    padding: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fafafa;
+    border-bottom: 1px solid #eeeeee;
+}
+
+.gambar-produk {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.produk-isi {
+    padding: 16px;
+}
+
+.merk-produk {
+    margin-bottom: 2px;
+    color: var(--merah);
+    font-size: 0.76rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+}
+
+.kartu-produk h2 {
+    min-height: 48px;
+    font-size: 1rem;
+    line-height: 1.35;
+}
+
+.detail-produk {
+    margin-top: 14px;
+    border-top: 1px solid #eeeeee;
+}
+
+.detail-produk > div {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 7px 0;
+    border-bottom: 1px solid #eeeeee;
+    font-size: 0.82rem;
+}
+
+.detail-produk dt {
+    color: var(--abu);
+}
+
+.detail-produk dd {
+    text-align: right;
+    font-weight: 700;
+}
+
+.harga {
+    margin-top: 16px;
+    font-size: 1.2rem;
+    font-weight: 800;
+}
+
+.stok-produk {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 12px;
+    padding-top: 10px;
+    border-top: 2px solid var(--hitam);
+    font-size: 0.82rem;
+}
+
+.stok-produk span {
+    color: var(--abu);
+}
+
+.pesan-kosong {
+    padding: 28px;
+    background: var(--putih);
+    border: 1px solid #dddddd;
+    text-align: center;
+}
+
+.site-footer {
+    width: min(1120px, calc(100% - 32px));
+    margin: 0 auto;
+    padding: 26px 0 34px;
+    border-top: 1px solid #d5d5d5;
+    color: var(--abu);
+    font-size: 0.85rem;
+}
+
+@media (max-width: 900px) {
+    .grid-produk {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .profil-detail,
+    .katalog-heading {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .header-inner {
+        min-height: auto;
+        padding: 16px 0;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-utama {
+        width: 100%;
+    }
+
+    .profil-page {
+        padding-top: 48px;
+    }
+
+    .profil-intro h1,
+    .katalog-heading h1 {
+        font-size: 2.25rem;
+    }
+
+    .profil-detail,
+    .grid-produk,
+    .ringkasan-katalog {
+        grid-template-columns: 1fr;
+    }
+
+    .ringkasan-item {
+        border-right: 0;
+        border-bottom: 1px solid #e2e2e2;
+    }
+
+    .ringkasan-item:last-child {
+        border-bottom: 0;
+    }
+
+    .filter-bar {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .biodata > div {
+        grid-template-columns: 1fr;
+        gap: 2px;
+    }
+}
